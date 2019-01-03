@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>medium clone</title>
+
+  <style>
+    .show__articles{
+      display: flex;
+      width: 50%;
+      margin: 1rem;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .article__body{
+      line-height: 1.5;
+    }
+    .article__body::first-letter {
+      text-transform: capitalize;
+    }
+    .article__claps{
+      display: flex;
+      flex-wrap: wrap;
+      width: 2rem;
+    }
+  </style>
+</head>
+<body> 
+    <%- include('partials/head') %>
+    <% data.forEach(function(value) { %>
+      <li class="show__articles">
+        <h1 class="article__heading"><a href=""><%= value.title %></a></h1>
+        <h2 class="article__description"><%= value.description %></h2>
+        <p class="article__body"><%= value.body %></p>
+        <input type="number" class="article__claps" value="<%= value.claps %>"/>
+      </li>
+  <% }); %>
+
+</body>
+</html>

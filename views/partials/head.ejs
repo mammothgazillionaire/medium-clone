@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>medium clone</title>
+   <style>
+     *,html{
+      font-family: sans-serif;
+     }
+     .home{
+      color: white; 
+      font-family: serif;
+      font-size: 4rem;
+      padding: 1rem;
+     }
+    .container{
+      margin: 0 auto;
+    }
+    .wrapper{
+      background: rgba(0, 0, 0,.75);
+      height: 14vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .title__main{
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      color: white;
+    }
+    li,a{
+      text-decoration: none;
+      list-style: none;
+    }
+  .list{
+    display: flex;
+  }
+    .links{
+      color: white;
+      margin-right:1.4rem;
+      transition: all .15s;
+    }
+    .links:hover{
+      padding-top: 2px;
+      border-bottom: 1.2px solid white;
+    }
+    .loggedin__user,
+    .logout__user{
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding:  0rem 1rem; 
+    }
+  </style>
+</head>
+
+<!-- views/partials/header.ejs -->
+
+<body class="container">
+    <div class="wrapper">
+      <h1 class="title__main"><a href="/" class="home">m</a></h1>
+      <nav>
+        <ul class="list">
+            <% if (user) { %>
+              <a href= "../profile" class="loggedin__user"><%= user.username %></a>
+              <a href="/logout" class="logout__user">logout</a>
+              <li><a href="../new" class="links">Create Posts</a></li>
+            <% } else { %>
+              <li><a href="../login" class="links">Login</a></li>
+              <li><a href="../signup" class="links">Signup</a></li>
+            <% } %>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>medium clone</title>
+  <style>
+      .form{
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.01);
+        box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
+        width: 25%;
+        margin: 1rem auto;
+        padding: 1.2rem;
+      }
+      .form_items{
+        display: block;
+        height: 2.2rem;
+        border: none;
+        outline: none;
+      }
+      .btn{
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <%- include('partials/head') %>
+
+  <form action="/signup" method="POST" class="form">
+    <input  type="text" name="name" placeholder="name" class="form_items"><br/><br/>
+    <input name="username" type="text" placeholder="username"/ class="form_items"><br/><br/>
+    <input name="email" type="email" placeholder="email"/ class="form_items"><br/><br/>
+    <input name="password" type="password"  placeholder="password"/ class="form_items"><br/><br/>
+    <button type="submit"class="form_items btn">submit</button>
+  </form>
+</body>
+</html>
